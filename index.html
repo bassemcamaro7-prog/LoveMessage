@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love - Isra 💖</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      font-family: 'Dancing Script', cursive;
+      background: linear-gradient(135deg, #ffb6c1, #87cefa, #ff0040, #000);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 3em;
+      text-shadow: 0 0 15px #fff;
+      margin-top: 60px;
+    }
+
+    .heart-container {
+      position: relative;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .heart {
+      font-size: 200px;
+      color: #ff0040;
+      text-shadow: 0 0 40px #fff, 0 0 80px #ff69b4;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      width: 600px;
+      margin: 20px auto 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    button {
+      font-family: 'Dancing Script', cursive;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.3em;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    button:hover {
+      background-color: #ff1493;
+      transform: scale(1.1);
+    }
+
+    .corner-img {
+      position: absolute;
+      width: 140px;
+      opacity: 0.8;
+    }
+
+    .corner1 { top: 20px; left: 20px; transform: rotate(-15deg); }
+    .corner2 { top: 20px; right: 20px; transform: rotate(15deg); }
+    .corner3 { bottom: 20px; left: 20px; transform: rotate(10deg); }
+    .corner4 { bottom: 20px; right: 20px; transform: rotate(-10deg); }
+
+    .floating {
+      position: absolute;
+      font-size: 20px;
+      animation: floatTop 10s linear infinite;
+      color: #ff69b4;
+      text-shadow: 0 0 15px #ff69b4;
+    }
+
+    @keyframes floatTop {
+      0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Kiss Page Styling */
+    #kissPage {
+      max-width: 800px;
+      margin: 50px auto;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      padding: 40px;
+      border-radius: 30px;
+      box-shadow: 0 0 50px rgba(255, 105, 180, 0.5);
+      text-align: center;
+      color: #fff;
+    }
+    #kissPage h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #ff0040;
+      text-shadow: 0 0 20px #fff, 0 0 60px #ff69b4;
+    }
+    #kissPage p {
+      font-size: 1.3em;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Letter Page Styling */
+    #letterPage {
+      max-width: 900px;
+      margin: 50px auto;
+      background: linear-gradient(135deg, rgba(255,192,203,0.2), rgba(135,206,250,0.2));
+      backdrop-filter: blur(8px);
+      padding: 50px;
+      border-radius: 30px;
+      box-shadow: 0 0 50px rgba(255, 255, 255, 0.3);
+      color: #fff;
+    }
+    .message-container h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .message-container p {
+      font-size: 1.2em;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    .return-btn {
+      display: block;
+      margin: 30px auto;
+      background: #ff69b4;
+      color: #fff;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.2em;
+      padding: 12px 30px;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255,105,180,0.5);
+      transition: 0.3s;
+    }
+    .return-btn:hover {
+      transform: scale(1.05);
+      background: #ff1493;
+    }
+
+    /* Eyes Box - في أسفل الصفحة */
+    #eyesBox {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(6px);
+      padding: 25px 45px;
+      border-radius: 30px;
+      text-align: center;
+      box-shadow: 0 0 35px rgba(255,105,180,0.4);
+      color: #fff;
+      z-index: 1;
+    }
+
+    .eyes {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-bottom: 10px;
+      animation: eyesPulse 2s ease-in-out infinite alternate;
+    }
+
+    .eye {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      box-shadow: 0 0 25px #fff, 0 0 40px #ff69b4;
+      animation: eyeGlow 1.5s ease-in-out infinite alternate;
+    }
+
+    .green { background: radial-gradient(circle, #0f0, #030); }
+    .brown { background: radial-gradient(circle, #a0522d, #210); }
+
+    @keyframes eyesPulse {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes eyeGlow {
+      0% { box-shadow: 0 0 20px #fff, 0 0 40px #ff69b4; }
+      50% { box-shadow: 0 0 35px #fff, 0 0 60px #ff69b4; }
+      100% { box-shadow: 0 0 20px #fff, 0 0 40px #ff69b4; }
+    }
+
+    #eyesBox p {
+      font-size: 1.3em;
+      color: #ffb6c1;
+      text-shadow: 0 0 10px #fff;
+      margin: 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <img src="https://i.ibb.co/XfZbNvVY/lamb1.jpg" class="corner-img corner1">
+  <img src="https://i.ibb.co/JwZFVDgZ/lamb2.jpg" class="corner-img corner2">
+  <img src="https://i.ibb.co/PGFf45kM/lamb3.jpg" class="corner-img corner3">
+  <img src="https://i.ibb.co/kgn9wSm4/stitch-couple.jpg" class="corner-img corner4">
+
+  <h1>For My Love 💖 Isra</h1>
+
+  <div class="heart-container">
+    <div class="heart">❤</div>
+  </div>
+
+  <div class="buttons">
+    <button onclick="showLetter()">A Letter 💌</button>
+    <button onclick="showKiss()">Kiss 💋</button>
+  </div>
+
+  <!-- Eyes Box - أسفل الصفحة فقط -->
+  <div id="eyesBox">
+    <div class="eyes">
+      <div class="eye green"></div>
+      <div class="eye brown"></div>
+    </div>
+    <p>Two hearts, one gaze, endless love ❤️</p>
+  </div>
+
+  <div class="hidden" id="kissPage">
+    <h1>MWAH!!! 💋</h1>
+    <p>
+      Our lips meet softly, a tender brush that sparks warmth and closeness. 
+      Your hands find mine, a gentle embrace intertwining with the rhythm of our hearts. 
+      Time slows, and for this moment, nothing exists outside our gaze 
+      and the tender echo of love.
+    </p>
+    <img src="https://i.ibb.co/1GYy3wFs/lips.jpg" width="200" style="border-radius:50%; box-shadow:0 0 30px #ff69b4;">
+    <button class="return-btn" onclick="goHome()">← Back to Your Heart 💞</button>
+  </div>
+
+  <div class="hidden" id="letterPage">
+    <div class="message-container">
+      <h2>My Dearest Isra 💖</h2>
+      <p>
+        From the moment I first saw you, Isra, the world around me shifted. Every sunrise now
+        holds a color I had never noticed before, every song carries a whisper of your name,
+        and every heartbeat is a soft reminder of the love that has bloomed between us.
+      </p>
+      <p>
+        You are the poetry in my quiet moments, the laughter in my days, the warmth in my nights.
+        When I look at you, I see a thousand little universes converging into the one most important
+        to me — us. Your smile is the compass that guides me through the storms, your touch is the
+        sanctuary where I find peace, and your voice is the melody I play on repeat in my mind.
+      </p>
+      <p>
+        There are countless moments I replay in my heart: the way your eyes light up when you laugh,
+        the gentle brush of your hand against mine, the quiet comfort of simply being near you.
+        Each of these memories feels like a secret treasure, a jewel I carry with me wherever I go.
+      </p>
+      <p>
+        My love for you is not just in words or gestures; it is in every thought that drifts toward
+        you, in every dream where your presence turns the ordinary into extraordinary, and in every
+        promise I make silently, to love you more deeply every single day. You are the reason I
+        believe in the beauty of life, in the magic of connection, and in the endless possibilities
+        that love can create.
+      </p>
+      <p>
+        Even when distance or silence tries to test us, my heart beats only for you. In every
+        challenge, I find courage because of you; in every joy, I find completeness because of
+        you. You are not just my love, you are my home, my anchor, my greatest adventure.
+      </p>
+      <p>
+        I want to grow with you, dream with you, laugh with you, and hold your hand through
+        every season of life. My devotion to you knows no bounds — it is fierce, tender, eternal.
+        And if love had a scale, Isra, ours would break it every day, every hour, every moment.
+      </p>
+      <p>
+        Thank you for being you — for your kindness, your laughter, your heart that beats in
+        perfect rhythm with mine. Thank you for letting me love you, and for allowing me to
+        show you that love in every word, every touch, every glance. Forever and always,
+        Bassem.
+      </p>
+    </div>
+    <button class="return-btn" onclick="goHome()">← Back to Your Heart 💞</button>
+  </div>
+
+  <audio id="lovePotion" src="{{ url_for('static', filename='Love Potions (6arelyhuman Remix)(MP3_320K).mp3') }}"></audio>
+<audio id="goldenBrown" src="{{ url_for('static', filename='The Stranglers - Golden Brown (Lyrics)(MP3_320K).mp3') }}"></audio>
+
+  <script>
+    const home = document.body;
+    const kissPage = document.getElementById('kissPage');
+    const letterPage = document.getElementById('letterPage');
+    const potion = document.getElementById('lovePotion');
+    const brown = document.getElementById('goldenBrown');
+    const eyesBox = document.getElementById('eyesBox');
+
+    function showKiss() {
+      home.querySelector('h1').classList.add('hidden');
+      document.querySelector('.heart').classList.add('hidden');
+      document.querySelector('.buttons').classList.add('hidden');
+      eyesBox.style.display = 'none';
+      kissPage.classList.remove('hidden');
+      potion.volume = 0.2;
+      potion.play();
+    }
+
+    function showLetter() {
+      home.querySelector('h1').classList.add('hidden');
+      document.querySelector('.heart').classList.add('hidden');
+      document.querySelector('.buttons').classList.add('hidden');
+      eyesBox.style.display = 'none';
+      letterPage.classList.remove('hidden');
+      brown.volume = 0.2;
+      brown.play();
+    }
+
+    function goHome() {
+      potion.pause();
+      brown.pause();
+      potion.currentTime = 0;
+      brown.currentTime = 0;
+      kissPage.classList.add('hidden');
+      letterPage.classList.add('hidden');
+      document.querySelector('h1').classList.remove('hidden');
+      document.querySelector('.heart').classList.remove('hidden');
+      document.querySelector('.buttons').classList.remove('hidden');
+      eyesBox.style.display = 'block';
+    }
+
+    const words = ["❤","💖","💞","💘","💕","💓","💗","sousou","babe","my love","3omry","mmochti","wifey","my wife","my soul"];
+    function createFloating() {
+      const elem = document.createElement("div");
+      elem.classList.add("floating");
+      elem.style.left = Math.random() * 100 + "vw";
+      elem.style.top = Math.random() * 15 + "vh"; // الأعلى
+      elem.style.animationDuration = (8 + Math.random() * 5) + "s";
+      elem.textContent = words[Math.floor(Math.random() * words.length)];
+      document.body.appendChild(elem);
+      setTimeout(() => elem.remove(), 10000);
+    }
+    setInterval(createFloating, 800);
+  </script>
+</body>
+</html>
